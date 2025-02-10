@@ -45,12 +45,61 @@
             padding: 12px;
             font-weight: 600;
             animation: fadeIn 0.5s ease-out;
+            position: relative;
+            z-index: 10;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
+        }
+
+        /* Hero styles */
+        .hero {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            background: white;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4), transparent);
+            padding: 60px 20px 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-overlay h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-overlay p {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         /* Card styles */
@@ -66,25 +115,6 @@
 
         .card:hover {
             transform: translateY(-5px);
-        }
-
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
         }
 
         /* Button styles */
@@ -149,8 +179,11 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .hero-overlay h1 {
+                font-size: 1.8rem;
+            }
+            .hero-overlay p {
+                font-size: 1.2rem;
             }
             .card {
                 padding: 20px;
@@ -165,8 +198,18 @@
 
     <div class="container">
         <section class="hero">
-            <h1>🌊 GIVE YOUR BABY THE GIFT OF WONDER – RIGHT HERE IN THE MALDIVES</h1>
-            <p>Maldives' First Screen-Free Sensory Classes for Babies (0-12 months)</p>
+            <div class="hero-image-container">
+                <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6491-1z6d1EKJo1PbwzPMuq0uwdVZlQgFxj.jpeg" 
+                    alt="Baby sensory play setup with colorful mats and wooden toys" 
+                    class="hero-image"
+                    loading="eager"
+                />
+                <div class="hero-overlay">
+                    <h1>🌊 GIVE YOUR BABY THE GIFT OF WONDER – RIGHT HERE IN THE MALDIVES</h1>
+                    <p>Maldives' First Screen-Free Sensory Classes for Babies (0-12 months)</p>
+                </div>
+            </div>
         </section>
 
         <div class="card">
