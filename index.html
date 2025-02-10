@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baby Sensory Maldives – Screen-Free Sensory Classes for Babies</title>
     <style>
-        /* Base styles */
         :root {
             --baby-blue: #AAE3FF;
             --soft-yellow: #FFE566;
@@ -55,54 +54,58 @@
             padding: 0 20px;
         }
 
-        /* Hero styles */
         .hero {
-            margin-top: 20px;
+            margin-top: 0;
             margin-bottom: 40px;
+            width: 100%;
         }
 
         .hero-image-container {
             position: relative;
             width: 100%;
-            border-radius: 24px;
+            height: 100vh;
+            max-height: 800px;
             overflow: hidden;
-            box-shadow: var(--card-shadow);
-            background: white;
         }
 
         .hero-image {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
             object-fit: cover;
+            filter: brightness(1.2);
         }
 
         .hero-overlay {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4), transparent);
-            padding: 60px 20px 40px;
-            color: white;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
             text-align: center;
         }
 
         .hero-overlay h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: white;
         }
 
         .hero-overlay p {
             font-size: 1.5rem;
             margin-bottom: 15px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: white;
         }
 
-        /* Card styles */
         .card {
             background: white;
             border-radius: 24px;
@@ -117,7 +120,6 @@
             transform: translateY(-5px);
         }
 
-        /* Button styles */
         .button {
             display: inline-block;
             background: var(--accent-green);
@@ -136,7 +138,6 @@
             transform: scale(1.05);
         }
 
-        /* List styles */
         .feature-list {
             list-style: none;
             padding: 0;
@@ -159,7 +160,6 @@
             color: var(--accent-green);
         }
 
-        /* Quote styles */
         blockquote {
             font-size: 1.25rem;
             font-style: italic;
@@ -169,7 +169,6 @@
             margin: 20px 0;
         }
 
-        /* Testimonial styles */
         .testimonial {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
@@ -180,7 +179,7 @@
 
         @media (max-width: 768px) {
             .hero-overlay h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             .hero-overlay p {
                 font-size: 1.2rem;
@@ -196,22 +195,22 @@
         NEWBORNS WELCOME! - LIMITED SPOTS
     </div>
 
-    <div class="container">
-        <section class="hero">
-            <div class="hero-image-container">
-                <img 
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6491-1z6d1EKJo1PbwzPMuq0uwdVZlQgFxj.jpeg" 
-                    alt="Baby sensory play setup with colorful mats and wooden toys" 
-                    class="hero-image"
-                    loading="eager"
-                />
-                <div class="hero-overlay">
-                    <h1>🌊 GIVE YOUR BABY THE GIFT OF WONDER – RIGHT HERE IN THE MALDIVES</h1>
-                    <p>Maldives' First Screen-Free Sensory Classes for Babies (0-12 months)</p>
-                </div>
+    <section class="hero">
+        <div class="hero-image-container">
+            <img 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6491-1z6d1EKJo1PbwzPMuq0uwdVZlQgFxj.jpeg" 
+                alt="Baby sensory play setup with colorful mats and wooden toys" 
+                class="hero-image"
+                loading="eager"
+            />
+            <div class="hero-overlay">
+                <h1>🌊 GIVE YOUR BABY THE GIFT OF WONDER – RIGHT HERE IN THE MALDIVES</h1>
+                <p>Maldives' First Screen-Free Sensory Classes for Babies (0-12 months)</p>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <div class="container">
         <div class="card">
             <h2 style="font-size: 2rem; margin-bottom: 20px;">❤️ WHY EVERY MALDIVIAN PARENT NEEDS THIS:</h2>
             <blockquote>"In these precious early months, your baby's brain is growing faster than it ever will again."</blockquote>
@@ -274,7 +273,6 @@
     </div>
 
     <script>
-        // Animate features on scroll
         const observerOptions = {
             threshold: 0.1
         };
