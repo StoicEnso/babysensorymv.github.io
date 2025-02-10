@@ -1,207 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baby Sensory Maldives – Screen-Free Sensory Classes for Babies</title>
-  <style>
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f0f8ff; /* Alice Blue for a soft baby feel */
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    header {
-      background: linear-gradient(135deg, #a2d2ff, #ffe066); /* Baby blue to pastel yellow */
-      color: #333;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-    header p {
-      font-size: 1.2em;
-    }
-    section {
-      padding: 60px 20px;
-      background: #fff;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(162,210,255, 0.3);
-      border: 1px solid #d1e7ff;
-    }
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #89CFF0; /* Baby blue */
-      text-align: center;
-    }
-    section p {
-      margin-bottom: 20px;
-      font-size: 1.1em;
-    }
-    blockquote {
-      font-size: 1.2em;
-      font-style: italic;
-      margin: 20px 0;
-      padding-left: 20px;
-      border-left: 5px solid #ffb6b9; /* Soft baby pink */
-      color: #555;
-    }
-    ul {
-      list-style: none;
-      margin: 20px 0;
-      padding-left: 0;
-    }
-    ul li {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-      padding-left: 25px;
-      position: relative;
-    }
-    ul li:before {
-      content: "✅";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #89CFF0;
-    }
-    .testimonial {
-      border: 1px solid #d1e7ff;
-      padding: 20px;
-      border-radius: 5px;
-      background: #fff9db; /* Light pastel yellow */
-      margin-bottom: 20px;
-    }
-    .testimonial p {
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-    .testimonial span {
-      font-weight: bold;
-      display: block;
-      text-align: right;
-    }
-    /* CTA Section */
-    .cta-section {
-      text-align: center;
-      background: #fff9db; /* Light pastel yellow */
-      padding: 60px 20px;
-      border-radius: 10px;
-      border: 1px solid #d1e7ff;
-    }
-    .cta-section .cta-button {
-      background: #89CFF0; /* Baby blue */
-      color: #fff;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-size: 1.2em;
-      border-radius: 5px;
-      display: inline-flex;
-      align-items: center;
-      transition: background 0.3s ease;
-      margin-top: 20px;
-    }
-    .cta-section .cta-button:hover {
-      background: #6495ED; /* Slightly darker blue on hover */
-    }
-    .cta-section .cta-button svg {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-      fill: #fff;
-    }
-    @media (max-width: 768px) {
-      header {
-        padding: 60px 20px;
-      }
-      header h1 {
-        font-size: 2em;
-      }
-      section h2 {
-        font-size: 1.8em;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Sensory Maldives – Screen-Free Sensory Classes for Babies</title>
+    <style>
+        /* Base styles */
+        :root {
+            --baby-blue: #AAE3FF;
+            --soft-yellow: #FFE566;
+            --accent-green: #4ADE80;
+            --text-dark: #2D3748;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--baby-blue) 0%, var(--soft-yellow) 100%);
+        }
+
+        .announcement-bar {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-weight: 600;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Card styles */
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+
+        /* List styles */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .check-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: var(--accent-green);
+        }
+
+        /* Quote styles */
+        blockquote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #4A5568;
+            border-left: 4px solid var(--baby-blue);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        /* Testimonial styles */
+        .testimonial {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <h1>NEWBORNS WELCOME! - LIMITED SPOTS</h1>
-    <p>🌊 GIVE YOUR BABY THE GIFT OF WONDER – RIGHT HERE IN THE MALDIVES</p>
-    <p>Maldives’ First Screen-Free Sensory Classes for Babies (0-12 months)</p>
-  </header>
-  
-  <div class="container">
-    <!-- Why Every Parent Needs This -->
-    <section id="why">
-      <h2>❤️ WHY EVERY MALDIVIAN PARENT NEEDS THIS</h2>
-      <blockquote>"In these precious early months, your baby’s brain is growing faster than it ever will again."</blockquote>
-      <p>But in a world full of screens and distractions, it’s hard to know how to nurture their curiosity.</p>
-      <p>That’s why we created <strong>Baby ‘Sensory Maldives’</strong> – the Maldives’ only baby sensory class designed by child development experts to help your little one:</p>
-      <ul>
-        <li>EXPLORE squishy sea sponges, twinkling stars, and butterfly parachutes (no screens, just pure magic!)</li>
-        <li>BOND with you through giggles, songs, and shared discoveries</li>
-        <li>BUILD stronger muscles, sharper senses, and lifelong confidence</li>
-      </ul>
-      <p>And you’ll join a community of local parents who “get it” – because raising happy, thriving babies takes a village.</p>
-    </section>
-    
-    <!-- What Makes Our Classes Special -->
-    <section id="special">
-      <h2>🌺 WHAT MAKES OUR CLASSES SPECIAL</h2>
-      <blockquote>"We blend science with Maldivian warmth."</blockquote>
-      <p><strong>Maldives-Inspired Themes:</strong> Underwater adventures, tropical gardens, and starry island skies</p>
-      <p><strong>Expert-Designed Play:</strong> Every activity boosts brain development (proven by child psychologists!)</p>
-      <p><strong>Small Groups:</strong> Only 8 babies per class – so your little one gets personalized attention</p>
-    </section>
-    
-    <!-- Testimonials -->
-    <section id="testimonials">
-      <h2>☺️ HAPPY PARENTS, HAPPY BABIES</h2>
-      <div class="testimonial">
-        <p>“My daughter smiled more in one class than she does all week! We’ve made friends too – it’s our favorite part of the week.”</p>
-        <span>– Michelle</span>
-      </div>
-      <div class="testimonial">
-        <p>“Finally, something screen-free AND fun! I feel like I’m giving my son the best start.”</p>
-        <span>– Sumayya</span>
-      </div>
-    </section>
-    
-    <!-- Call to Action -->
-    <section id="cta" class="cta-section">
-      <h2>⏳ SPOTS FILL FASTER THAN A TIDE POOL!</h2>
-      <p>We are starting with only 3 special classes in February – Don’t Miss Out!</p>
-      <a class="cta-button" href="https://wa.me/9601234567?text=Hi!%20I’d%20like%20to%20book%20a%20sensory%20class%20for%20my%20baby!" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path d="M380.9 97.1C339 55.1 283.6 32 224 32 100.3 32 0 132.3 0 256c0 45.4 12.1 89.8 35 128.1L0 480l98.6-32.9C139.6 467.2 180 480 224 480c123.7 0 224-100.3 224-224 0-59.6-23.1-115-97.1-158.9zM224 433.4c-40.5 0-80-10.4-115.4-30l-8.2-4.8-58.7 19.6 19.8-57.3-5.3-8.7C44.2 320 34.1 280.8 34.1 240 34.1 137 137 34.1 240 34.1c59.6 0 115 23.1 158.9 97.1 43.9 73.9 23.4 180.1-50.5 224C335.4 423 279.9 433.4 224 433.4zM312.1 321.6c-4.1 11.5-20.9 21.8-29.1 24.5-7.4 2.5-16.3 3.6-25.2-0.8-27.5-11.2-51.1-37.8-60.3-63.6-4.1-11.5-2.3-21.4 1.6-30.2 3.2-7.8 14.1-21.3 20.3-28.7 7.1-9.2 9.4-14.1 14.8-22.4 4.9-8.6 2.5-15.7-1.3-21.2-7.6-12.7-68.1-65.5-68.1-126.2 0-70.3 57.3-127.6 127.6-127.6 34.3 0 66.5 13.3 90.8 37.6 24.3 24.3 37.6 56.5 37.6 90.8 0 70.3-57.3 127.6-127.6 127.6-37.2 0-60.8-20.1-76.9-42.4-9.9-16.8-18.1-34.4-22.4-48.6-2.3-8.6 4.9-13.4 12.4-13.4h0c7 0 18 7.1 27.3 17.1 9.3 10 17.8 22.6 25.8 37.8 7.2 14.3 13.4 26.5 19.5 36.6 6.1 10.1 11.1 16.3 20.1 16.3h0c8.9 0 16.4-6.5 21.6-14.5 5.2-8 9.3-17.4 12.4-27.4 3.1-10 0.9-20.1-3.2-29.5z"/>
-        </svg>
-        MESSAGE US NOW TO CLAIM YOUR SPOT
-      </a>
-      <p style="margin-top:20px;">OR<br>Call/WhatsApp: +9601234567</p>
-    </section>
-    
-    <!-- Postscript -->
-    <section id="ps">
-      <p style="text-align:center; font-size:1.2em;">
-        ❤️ P.S. – YOUR BABY DESERVES THIS.<br>
-        You’ll never get these months back. Give them (and yourself!) the gift of connection, growth, and joy – all while making lifelong mom/dad friends.
-      </p>
-    </section>
-  </div>
+    <div class="announcement-bar">
+        NEWBORNS WELCOME! - LIMITED SPOTS
+    </div>
+
+    <div class="container">
+        <section class="hero">
+            <h1>🌊 GIVE YOUR BABY THE GIFT OF WONDER – RIGHT HERE IN THE MALDIVES</h1>
+            <p>Maldives' First Screen-Free Sensory Classes for Babies (0-12 months)</p>
+        </section>
+
+        <div class="card">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">❤️ WHY EVERY MALDIVIAN PARENT NEEDS THIS:</h2>
+            <blockquote>"In these precious early months, your baby's brain is growing faster than it ever will again."</blockquote>
+            <p>But in a world full of screens and distractions, it's hard to know how to nurture their curiosity.</p>
+            <p style="margin-top: 20px;">That's why we created Baby 'Sensory Maldives' – the Maldives' only baby sensory class designed by child development experts to help your little one:</p>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <span class="check-icon">✅</span>
+                    <div>EXPLORE squishy sea sponges, twinkling stars, and butterfly parachutes (no screens, just pure magic!)</div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-icon">✅</span>
+                    <div>BOND with you through giggles, songs, and shared discoveries</div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-icon">✅</span>
+                    <div>BUILD stronger muscles, sharper senses, and lifelong confidence</div>
+                </li>
+            </ul>
+            <p>And you'll join a community of local parents who "get it" – because raising happy, thriving babies takes a village.</p>
+        </div>
+
+        <div class="card">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">🌺 WHAT MAKES OUR CLASSES SPECIAL:</h2>
+            <blockquote>"We blend science with Maldivian warmth."</blockquote>
+            <p><strong>Maldives-Inspired Themes:</strong> Underwater adventures, tropical gardens, and starry island skies</p>
+            <p><strong>Expert-Designed Play:</strong> Every activity boosts brain development (proven by child psychologists!)</p>
+            <p><strong>Small Groups:</strong> Only 8 babies per class – so your little one gets personalized attention</p>
+        </div>
+
+        <div class="card">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">☺️ HAPPY PARENTS, HAPPY BABIES:</h2>
+            <p style="margin-bottom: 20px;">what parents say about baby sensory in other countries</p>
+            <div class="testimonial">
+                <p style="font-style: italic;">"My daughter smiled more in one class than she does all week! We've made friends too – it's our favorite part of the week."</p>
+                <p style="text-align: right; margin-top: 10px; font-weight: 600;">– Michelle</p>
+            </div>
+            <div class="testimonial">
+                <p style="font-style: italic;">"Finally, something screen-free AND fun! I feel like I'm giving my son the best start."</p>
+                <p style="text-align: right; margin-top: 10px; font-weight: 600;">– Sumayya</p>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">⏳ SPOTS FILL FASTER THAN A TIDE POOL!</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">We are Starting with Only 3 Special Classes in February – Don't Miss Out!</p>
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px;">📱 MESSAGE US NOW TO CLAIM YOUR SPOT:</h3>
+            <a href="https://wa.me/960?text=Hi!%20I'd%20like%20to%20book%20a%20sensory%20class%20for%20my%20baby!" class="button" style="margin-bottom: 20px;">
+                Message Us on WhatsApp
+            </a>
+            <p style="color: #666;">OR<br>Call/WhatsApp: +960 [Your Number]</p>
+        </div>
+
+        <div class="card" style="text-align: center; background: rgba(255, 255, 255, 0.9);">
+            <p style="font-size: 1.2rem; color: #2D3748;">
+                ❤️ P.S. – YOUR BABY DESERVES THIS.<br>
+                You'll never get these months back. Give them (and yourself!) the gift of connection, growth, and joy – all while making lifelong mom/dad friends.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Animate features on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(20px)";
+            observer.observe(item);
+        });
+    </script>
 </body>
 </html>
