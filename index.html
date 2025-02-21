@@ -1,296 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baby Sensory Maldives – Screen-Free Sensory Classes for Babies</title>
-    <style>
-        :root {
-            --baby-blue: #AAE3FF;
-            --soft-yellow: #FFE566;
-            --accent-green: #4ADE80;
-            --text-dark: #2D3748;
-            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Sensory Maldives – Screen-Free Sensory Classes for Babies</title>
+  <style>
+    /* ----------------------------------------------
+       NEOBRUTALIST PALETTE & BASE STYLES
+    ---------------------------------------------- */
+    :root {
+      --bg-color: #fff176;         /* Bold yellow for main background */
+      --card-bg: #ffffff;         /* White for cards */
+      --overlay-bg: #ffffff;      /* White overlay for hero text */
+      --text-color: #000000;      /* Black text */
+      --accent-color: #ff5722;    /* Bright accent color (button) */
+      --border-color: #000000;    /* Black border for brutalist outlines */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      --border-width: 4px;
+      --card-radius: 12px;
+    }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, var(--baby-blue) 0%, var(--soft-yellow) 100%);
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .announcement-bar {
-            background: var(--text-dark);
-            color: white;
-            text-align: center;
-            padding: 12px;
-            font-weight: 600;
-            animation: fadeIn 0.5s ease-out;
-            position: relative;
-            z-index: 10;
-        }
+    /* ----------------------------------------------
+       BODY
+    ---------------------------------------------- */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    /* ----------------------------------------------
+       ANNOUNCEMENT BAR
+    ---------------------------------------------- */
+    .announcement-bar {
+      background: var(--text-color);
+      color: #ffffff;
+      text-align: center;
+      padding: 12px;
+      font-weight: 600;
+      animation: fadeIn 0.5s ease-out;
+      position: relative;
+      z-index: 10;
+      border-bottom: var(--border-width) solid var(--border-color);
+    }
 
-        .hero {
-            margin-top: 0;
-            margin-bottom: 40px;
-            width: 100%;
-        }
+    /* ----------------------------------------------
+       CONTAINER
+    ---------------------------------------------- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        .hero-image-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            max-height: 800px;
-            overflow: hidden;
-        }
+    /* ----------------------------------------------
+       HERO SECTION
+    ---------------------------------------------- */
+    .hero {
+      margin-top: 0;
+      margin-bottom: 40px;
+      width: 100%;
+    }
 
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(1.2);
-        }
+    .hero-image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      max-height: 800px;
+      overflow: hidden;
+      border-bottom: var(--border-width) solid var(--border-color);
+    }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-        }
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Slight brightness for contrast with overlay text */
+      filter: brightness(1.2);
+    }
 
-        .hero-overlay h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            color: white;
-        }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--overlay-bg);
+      opacity: 0.85;
+      padding: 20px;
+      border-top: var(--border-width) solid var(--border-color);
+      border-right: var(--border-width) solid var(--border-color);
+      border-bottom: var(--border-width) solid var(--border-color);
+      border-left: var(--border-width) solid var(--border-color);
+      animation: fadeIn 0.5s ease-out;
+    }
 
-        .hero-overlay p {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            color: white;
-        }
+    .hero-overlay h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      color: var(--text-color);
+    }
 
-        .card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease;
-            animation: fadeIn 1s ease-out;
-        }
+    .hero-overlay p {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+    /* ----------------------------------------------
+       CARD
+    ---------------------------------------------- */
+    .card {
+      background: var(--card-bg);
+      border: var(--border-width) solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 40px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+      animation: fadeIn 1s ease-out;
+    }
 
-        .button {
-            display: inline-block;
-            background: var(--accent-green);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s ease;
-            border: 3px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-        .button:hover {
-            transform: scale(1.05);
-        }
+    /* ----------------------------------------------
+       BUTTON
+    ---------------------------------------------- */
+    .button {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #ffffff;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+      border: var(--border-width) solid var(--border-color);
+    }
 
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
+    .button:hover {
+      transform: scale(1.05);
+    }
 
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 16px;
-            animation: fadeIn 0.5s ease-out;
-        }
+    /* ----------------------------------------------
+       FEATURE LIST
+    ---------------------------------------------- */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
 
-        .check-icon {
-            margin-right: 15px;
-            font-size: 1.5rem;
-            color: var(--accent-green);
-        }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border: var(--border-width) solid var(--border-color);
+      border-radius: 8px;
+      animation: fadeIn 0.5s ease-out;
+    }
 
-        blockquote {
-            font-size: 1.25rem;
-            font-style: italic;
-            color: #4A5568;
-            border-left: 4px solid var(--baby-blue);
-            padding-left: 20px;
-            margin: 20px 0;
-        }
+    .check-icon {
+      margin-right: 15px;
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
 
-        .testimonial {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: var(--card-shadow);
-        }
+    /* ----------------------------------------------
+       BLOCKQUOTE / TESTIMONIAL
+    ---------------------------------------------- */
+    blockquote {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #4A5568;
+      border-left: var(--border-width) solid var(--border-color);
+      padding-left: 20px;
+      margin: 20px 0;
+    }
 
-        @media (max-width: 768px) {
-            .hero-overlay h1 {
-                font-size: 2rem;
-            }
-            .hero-overlay p {
-                font-size: 1.2rem;
-            }
-            .card {
-                padding: 20px;
-            }
-        }
-    </style>
+    .testimonial {
+      background: rgba(255, 255, 255, 0.9);
+      border: var(--border-width) solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+
+    /* ----------------------------------------------
+       RESPONSIVE
+    ---------------------------------------------- */
+    @media (max-width: 768px) {
+      .hero-overlay h1 {
+        font-size: 2rem;
+      }
+      .hero-overlay p {
+        font-size: 1.2rem;
+      }
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="announcement-bar">
-        NEWBORNS WELCOME! - LIMITED SPOTS
+  <div class="announcement-bar">
+    NEWBORNS WELCOME! - LIMITED SPOTS
+  </div>
+
+  <section class="hero">
+    <div class="hero-image-container">
+      <img
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6491-1z6d1EKJo1PbwzPMuq0uwdVZlQgFxj.jpeg"
+        alt="Baby sensory play setup with colorful mats and wooden toys"
+        class="hero-image"
+        loading="eager"
+      />
+      <div class="hero-overlay">
+        <h1>🌊 GIVE YOUR BABY THE GIFT OF WONDER – RIGHT HERE IN THE MALDIVES</h1>
+        <p>Maldives' First Screen-Free Sensory Classes for Babies (0-12 months)</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="card">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">❤️ WHY EVERY MALDIVIAN PARENT NEEDS THIS:</h2>
+      <blockquote>"In these precious early months, your baby's brain is growing faster than it ever will again."</blockquote>
+      <p>But in a world full of screens and distractions, it's hard to know how to nurture their curiosity.</p>
+      <p style="margin-top: 20px;">That's why we created Baby 'Sensory Maldives' – the Maldives' only baby sensory class designed by child development experts to help your little one:</p>
+      <ul class="feature-list">
+        <li class="feature-item">
+          <span class="check-icon">✅</span>
+          <div>EXPLORE squishy sea sponges, twinkling stars, and butterfly parachutes (no screens, just pure magic!)</div>
+        </li>
+        <li class="feature-item">
+          <span class="check-icon">✅</span>
+          <div>BOND with you through giggles, songs, and shared discoveries</div>
+        </li>
+        <li class="feature-item">
+          <span class="check-icon">✅</span>
+          <div>BUILD stronger muscles, sharper senses, and lifelong confidence</div>
+        </li>
+      </ul>
+      <p>And you'll join a community of local parents who "get it" – because raising happy, thriving babies takes a village.</p>
     </div>
 
-    <section class="hero">
-        <div class="hero-image-container">
-            <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6491-1z6d1EKJo1PbwzPMuq0uwdVZlQgFxj.jpeg" 
-                alt="Baby sensory play setup with colorful mats and wooden toys" 
-                class="hero-image"
-                loading="eager"
-            />
-            <div class="hero-overlay">
-                <h1>🌊 GIVE YOUR BABY THE GIFT OF WONDER – RIGHT HERE IN THE MALDIVES</h1>
-                <p>Maldives' First Screen-Free Sensory Classes for Babies (0-12 months)</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="card">
-            <h2 style="font-size: 2rem; margin-bottom: 20px;">❤️ WHY EVERY MALDIVIAN PARENT NEEDS THIS:</h2>
-            <blockquote>"In these precious early months, your baby's brain is growing faster than it ever will again."</blockquote>
-            <p>But in a world full of screens and distractions, it's hard to know how to nurture their curiosity.</p>
-            <p style="margin-top: 20px;">That's why we created Baby 'Sensory Maldives' – the Maldives' only baby sensory class designed by child development experts to help your little one:</p>
-            <ul class="feature-list">
-                <li class="feature-item">
-                    <span class="check-icon">✅</span>
-                    <div>EXPLORE squishy sea sponges, twinkling stars, and butterfly parachutes (no screens, just pure magic!)</div>
-                </li>
-                <li class="feature-item">
-                    <span class="check-icon">✅</span>
-                    <div>BOND with you through giggles, songs, and shared discoveries</div>
-                </li>
-                <li class="feature-item">
-                    <span class="check-icon">✅</span>
-                    <div>BUILD stronger muscles, sharper senses, and lifelong confidence</div>
-                </li>
-            </ul>
-            <p>And you'll join a community of local parents who "get it" – because raising happy, thriving babies takes a village.</p>
-        </div>
-
-        <div class="card">
-            <h2 style="font-size: 2rem; margin-bottom: 20px;">🌺 WHAT MAKES OUR CLASSES SPECIAL:</h2>
-            <blockquote>"We blend science with Maldivian warmth."</blockquote>
-            <p><strong>Maldives-Inspired Themes:</strong> Underwater adventures, tropical gardens, and starry island skies</p>
-            <p><strong>Expert-Designed Play:</strong> Every activity boosts brain development (proven by child psychologists!)</p>
-            <p><strong>Small Groups:</strong> Only 8 babies per class – so your little one gets personalized attention</p>
-        </div>
-
-        <div class="card">
-            <h2 style="font-size: 2rem; margin-bottom: 20px;">☺️ HAPPY PARENTS, HAPPY BABIES:</h2>
-            <p style="margin-bottom: 20px;">what parents say about baby sensory in other countries</p>
-            <div class="testimonial">
-                <p style="font-style: italic;">"My daughter smiled more in one class than she does all week! We've made friends too – it's our favorite part of the week."</p>
-                <p style="text-align: right; margin-top: 10px; font-weight: 600;">– Michelle</p>
-            </div>
-            <div class="testimonial">
-                <p style="font-style: italic;">"Finally, something screen-free AND fun! I feel like I'm giving my son the best start."</p>
-                <p style="text-align: right; margin-top: 10px; font-weight: 600;">– Sumayya</p>
-            </div>
-        </div>
-
-        <div class="card" style="text-align: center;">
-            <h2 style="font-size: 2rem; margin-bottom: 20px;">⏳ SPOTS FILL FASTER THAN A TIDE POOL!</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">We are Starting with Only 3 Special Classes in February – Don't Miss Out!</p>
-            <h3 style="font-size: 1.5rem; margin-bottom: 20px;">📱 MESSAGE US NOW TO CLAIM YOUR SPOT:</h3>
-            <a href="https://wa.me/960?text=Hi!%20I'd%20like%20to%20book%20a%20sensory%20class%20for%20my%20baby!" class="button" style="margin-bottom: 20px;">
-                Message Us on WhatsApp
-            </a>
-            <p style="color: #666;">OR<br>Call/WhatsApp: +960 [Your Number]</p>
-        </div>
-
-        <div class="card" style="text-align: center; background: rgba(255, 255, 255, 0.9);">
-            <p style="font-size: 1.2rem; color: #2D3748;">
-                ❤️ P.S. – YOUR BABY DESERVES THIS.<br>
-                You'll never get these months back. Give them (and yourself!) the gift of connection, growth, and joy – all while making lifelong mom/dad friends.
-            </p>
-        </div>
+    <div class="card">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">🌺 WHAT MAKES OUR CLASSES SPECIAL:</h2>
+      <blockquote>"We blend science with Maldivian warmth."</blockquote>
+      <p><strong>Maldives-Inspired Themes:</strong> Underwater adventures, tropical gardens, and starry island skies</p>
+      <p><strong>Expert-Designed Play:</strong> Every activity boosts brain development (proven by child psychologists!)</p>
+      <p><strong>Small Groups:</strong> Only 8 babies per class – so your little one gets personalized attention</p>
     </div>
 
-    <script>
-        const observerOptions = {
-            threshold: 0.1
-        };
+    <div class="card">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">☺️ HAPPY PARENTS, HAPPY BABIES:</h2>
+      <p style="margin-bottom: 20px;">what parents say about baby sensory in other countries</p>
+      <div class="testimonial">
+        <p style="font-style: italic;">"My daughter smiled more in one class than she does all week! We've made friends too – it's our favorite part of the week."</p>
+        <p style="text-align: right; margin-top: 10px; font-weight: 600;">– Michelle</p>
+      </div>
+      <div class="testimonial">
+        <p style="font-style: italic;">"Finally, something screen-free AND fun! I feel like I'm giving my son the best start."</p>
+        <p style="text-align: right; margin-top: 10px; font-weight: 600;">– Sumayya</p>
+      </div>
+    </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, observerOptions);
+    <div class="card" style="text-align: center;">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">⏳ SPOTS FILL FASTER THAN A TIDE POOL!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 30px;">We are Starting with Only 3 Special Classes in February – Don't Miss Out!</p>
+      <h3 style="font-size: 1.5rem; margin-bottom: 20px;">📱 MESSAGE US NOW TO CLAIM YOUR SPOT:</h3>
+      <a
+        href="https://wa.me/960?text=Hi!%20I'd%20like%20to%20book%20a%20sensory%20class%20for%20my%20baby!"
+        class="button"
+        style="margin-bottom: 20px;"
+      >
+        Message Us on WhatsApp
+      </a>
+      <p style="color: #666;">OR<br>Call/WhatsApp: +960 [Your Number]</p>
+    </div>
 
-        document.querySelectorAll('.feature-item').forEach(item => {
-            item.style.opacity = "0";
-            item.style.transform = "translateY(20px)";
-            observer.observe(item);
-        });
-    </script>
+    <div class="card" style="text-align: center; background: rgba(255, 255, 255, 0.9);">
+      <p style="font-size: 1.2rem; color: #2D3748;">
+        ❤️ P.S. – YOUR BABY DESERVES THIS.<br>
+        You'll never get these months back. Give them (and yourself!) the gift of connection, growth, and joy – all while making lifelong mom/dad friends.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-item').forEach(item => {
+      item.style.opacity = "0";
+      item.style.transform = "translateY(20px)";
+      observer.observe(item);
+    });
+  </script>
 </body>
 </html>
+
